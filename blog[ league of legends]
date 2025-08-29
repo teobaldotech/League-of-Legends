@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Plano Eboo - Blog Interativo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0e1012;
+      color: #e0e0e0;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #00ff88;
+      color: #0e1012;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    h2, h3 {
+      color: #00ffff;
+      margin-top: 40px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li::before {
+      content: "🎯 ";
+      margin-right: 5px;
+    }
+    .week, .update, .comments {
+      background-color: #1c1e22;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .update {
+      border-left: 5px solid #00ff88;
+    }
+    .comment-box {
+      margin-top: 10px;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: #2a2d32;
+      color: #e0e0e0;
+      resize: vertical;
+    }
+    button {
+      background-color: #00ff88;
+      color: #0e1012;
+      border: none;
+      padding: 10px 15px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .comment {
+      background-color: #2a2d32;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #888;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Plano Eboo - Suba de Elo no LoL Sem Desculpas</h1>
+    <p>Blog interativo para jogadores que querem evoluir com foco e consistência</p>
+  </header>
+
+  <div class="container">
+    <h2>📅 Semana 1: Controle Total</h2>
+    <div class="week">
+      <ul>
+        <li>Foque em farm e dragões</li>
+        <li>Mute all no início da partida</li>
+        <li>Assista 1 replay por dia</li>
+      </ul>
+    </div>
+
+    <h2>📅 Semana 2: Macro & Roaming</h2>
+    <div class="week">
+      <ul>
+        <li>Adicione Amumu ou Nocturne à pool</li>
+        <li>Chame objetivos com pings</li>
+        <li>Use o Arauto para levar torres</li>
+      </ul>
+    </div>
+
+    <h2>📅 Semana 3: Mente Fria</h2>
+    <div class="week">
+      <ul>
+        <li>Jogue sem usar o chat</li>
+        <li>Confie só no mapa e nos pings</li>
+        <li>Faça shotcalls de barão/dragão</li>
+      </ul>
+    </div>
+
+    <h2>📢 Atualização Semanal</h2>
+    <div class="update">
+      <p><strong>Meta da Semana:</strong> Warwick continua forte no patch atual. Abuse do sustain e controle de objetivos!</p>
+      <p><strong>Dica:</strong> Use <a href="https://u.gg" target="_blank">u.gg</a> para ajustar runas e builds antes de cada partida.</p>
+    </div>
+
+    <h2>💬 Comentários da Comunidade</h2>
+    <button onclick="toggleComments()">Mostrar/Ocultar Comentários</button>
+    <div class="comments" id="commentSection" style="display:none;">
+      <div class="comment-box">
+        <textarea id="commentInput" rows="4" placeholder="Escreva seu comentário..."></textarea>
+        <button onclick="saveComment()">Enviar Comentário</button>
+      </div>
+      <div id="commentList"></div>
+    </div>
+  </div>
+
+  <footer>
+    Feito com GG para quem quer subir de elo sem desculpas. GL HF! 🎮
+  </footer>
+
+  <script>
+    function toggleComments() {
+      const section = document.getElementById('commentSection');
+      section.style.display = section.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function saveComment() {
+      const input = document.getElementById('commentInput');
+      const comment = input.value.trim();
+      if (comment) {
+        const comments = JSON.parse(localStorage.getItem('ebooComments') || '[]');
+        comments.push(comment);
+        localStorage.setItem('ebooComments', JSON.stringify(comments));
+        input.value = '';
+        renderComments();
+      }
+    }
+
+    function renderComments() {
+      const comments = JSON.parse(localStorage.getItem('ebooComments') || '[]');
+      const list = document.getElementById('commentList');
+      list.innerHTML = comments.map(c => `<div class="comment">${c}</div>`).join('');
+    }
+
+    window.onload = renderComments;
+  </script>
+</body>
+</html>
