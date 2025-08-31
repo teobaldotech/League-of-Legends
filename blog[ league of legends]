@@ -35,7 +35,7 @@
       content: "🎯 ";
       margin-right: 5px;
     }
-    .week, .update, .comments {
+    .week, .update, .comments, .news, .arena {
       background-color: #1c1e22;
       padding: 20px;
       border-radius: 10px;
@@ -43,6 +43,12 @@
     }
     .update {
       border-left: 5px solid #00ff88;
+    }
+    .news {
+      border-left: 5px solid #00ffff;
+    }
+    .arena {
+      border-left: 5px solid #ff0044;
     }
     .comment-box {
       margin-top: 10px;
@@ -124,6 +130,19 @@
       <p><strong>Dica:</strong> Use <a href="https://u.gg" target="_blank">u.gg</a> para ajustar runas e builds antes de cada partida.</p>
     </div>
 
+    <h2>📰 Notícias Dinâmicas</h2>
+    <div class="news" id="newsSection">
+      <p>Carregando últimas notícias...</p>
+    </div>
+
+    <h2>🏟️ Modo Arena - Agosto 2025</h2>
+    <div class="arena">
+      <p><strong>🔥 Arena Noxiana em destaque:</strong> O modo Arena voltou com tudo em 2025, agora com temática de <em>Noxus</em>. Prepare-se para batalhas em um mapa inspirado em arenas de gladiadores.</p>
+      <p><strong>🎭 Sistema “Convidados de Honra”:</strong> Jogadores podem votar em personagens famosos de Noxus para alterar as regras de cada partida. Uma inovação que promete deixar cada jogo único.</p>
+      <p><strong>🛠️ Mudanças baseadas em feedback:</strong> A Riot ajustou itens e mecânicas do modo Arena com base na opinião da comunidade. O objetivo é tornar o modo mais estratégico e divertido.</p>
+      <p><strong>⏳ Fim da Temporada Ranqueada:</strong> A temporada 2 termina em <em>26 de agosto</em>, e a temporada 3 começa no dia seguinte com novas recompensas e ajustes no Passe de Batalha.</p>
+    </div>
+
     <h2>💬 Comentários da Comunidade</h2>
     <button onclick="toggleComments()">Mostrar/Ocultar Comentários</button>
     <div class="comments" id="commentSection" style="display:none;">
@@ -148,7 +167,7 @@
     function saveComment() {
       const input = document.getElementById('commentInput');
       const comment = input.value.trim();
-      if (comment) {
+      if (comment.replace(/\s/g, '').length > 0) {
         const comments = JSON.parse(localStorage.getItem('ebooComments') || '[]');
         comments.push(comment);
         localStorage.setItem('ebooComments', JSON.stringify(comments));
@@ -163,7 +182,31 @@
       list.innerHTML = comments.map(c => `<div class="comment">${c}</div>`).join('');
     }
 
-    window.onload = renderComments;
+    function fetchNews() {
+      const newsSection = document.getElementById('newsSection');
+      const news = [
+        {
+          title: "🎉 Runeterra Fan Fest confirmado!",
+          content: "Evento acontece nos dias 27 e 28 de setembro em SP com influenciadores e ativações exclusivas."
+        },
+        {
+          title: "🥔 Pringles lança sabores inspirados em campeãs",
+          content: "Chicken Oriental (Leona) e Spicy Mayo (Mel) chegam como edições limitadas."
+        },
+        {
+          title: "🌍 Mundial 2024 se aproxima",
+          content: "Equipes do mundo todo se preparam para disputar o troféu em outubro."
+        }
+      ];
+      newsSection.innerHTML = news.map(n => `
+        <p><strong>${n.title}</strong><br>${n.content}</p>
+      `).join('');
+    }
+
+    window.onload = () => {
+      renderComments();
+      fetchNews();
+    };
   </script>
 </body>
 </html>
