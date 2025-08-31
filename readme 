@@ -1,0 +1,24 @@
+# 🧠 Plano Eboo - Blog Interativo para Evoluir no LoL
+
+Bem-vindo ao **Plano Eboo**, um blog interativo criado para ajudar jogadores de League of Legends a subirem de elo com foco, consistência e sem desculpas. Este projeto combina dicas semanais, atualizações de meta, notícias dinâmicas e uma seção de comentários para engajar a comunidade.
+
+## 🚀 Funcionalidades
+
+- 📅 **Plano Semanal de Evolução**: Dividido em 3 semanas com metas práticas para melhorar seu desempenho.
+- 📢 **Atualizações Semanais**: Destaques do meta atual e dicas estratégicas.
+- 📰 **Notícias Dinâmicas**: Eventos, lançamentos e novidades do universo LoL.
+- 🏟️ **Modo Arena 2025**: Informações sobre o retorno do modo com temática Noxiana.
+- 💬 **Comentários da Comunidade**: Sistema de comentários com armazenamento local (LocalStorage).
+
+## 🛠️ Tecnologias Utilizadas
+
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
+- LocalStorage para persistência de comentários
+
+## 📦 Como Usar
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/plano-eboo.git
