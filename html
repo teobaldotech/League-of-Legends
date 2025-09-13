@@ -5,7 +5,7 @@
   <title>Plano Eboo - Subir de Elo no LoL</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: #0e1012;
       color: #e0e0e0;
       padding: 20px;
@@ -14,11 +14,22 @@
       color: #00ff88;
     }
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       background-color: #1c1e22;
-      padding: 20px;
-      border-radius: 10px;
+      padding: 30px;
+      border-radius: 12px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .checklist input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.2);
     }
     table {
       width: 100%;
@@ -40,6 +51,16 @@
       border-radius: 4px;
       color: #00ff88;
     }
+    .highlight {
+      color: #00ffff;
+      font-weight: bold;
+    }
+    .footer {
+      margin-top: 30px;
+      font-style: italic;
+      color: #888;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -47,14 +68,14 @@
     <h1>Plano Eboo 🎯</h1>
     <p>Suba de elo no League of Legends com foco, consistência e campeões fáceis de carregar!</p>
 
-    <h2>🎮 Campeão Principal: <span style="color:#00ffff;">Warwick</span></h2>
+    <h2>🎮 Campeão Principal: <span class="highlight">Warwick</span></h2>
     <ul>
-      <li>Fácil de aprender</li>
-      <li>Ótimo sustain e duelos</li>
-      <li>Dragões e objetivos garantidos</li>
+      <li>✅ Fácil de aprender</li>
+      <li>✅ Ótimo sustain e duelos</li>
+      <li>✅ Dragões e objetivos garantidos</li>
     </ul>
 
-    <h3>🏹 Runas (Precision + Domination)</h3>
+    <h3>🏹 Runas (Precisão + Dominação)</h3>
     <ul>
       <li><code>Ritmo Fatal</code>, <code>Triunfo</code>, <code>Lenda: Espontaneidade</code>, <code>Golpe de Misericórdia</code></li>
       <li><code>Impacto Repentino</code>, <code>Caça Incansável</code></li>
@@ -68,24 +89,24 @@
     <h2>📅 Plano Semanal</h2>
 
     <h3>🔹 Semana 1: Controle Total</h3>
-    <ul>
-      <li>Foque em farm e dragões</li>
-      <li>Mute all no início da partida</li>
-      <li>Assista 1 replay por dia</li>
+    <ul class="checklist">
+      <li><input type="checkbox">Foque em farm e dragões</li>
+      <li><input type="checkbox">Mute all no início da partida</li>
+      <li><input type="checkbox">Assista 1 replay por dia</li>
     </ul>
 
     <h3>🔹 Semana 2: Macro & Roaming</h3>
-    <ul>
-      <li>Adicione <strong>Amumu</strong> ou <strong>Nocturne</strong> à pool</li>
-      <li>Chame objetivos com pings</li>
-      <li>Use o Arauto para levar torres</li>
+    <ul class="checklist">
+      <li><input type="checkbox">Adicione <strong>Amumu</strong> ou <strong>Nocturne</strong> à pool</li>
+      <li><input type="checkbox">Chame objetivos com pings</li>
+      <li><input type="checkbox">Use o Arauto para levar torres</li>
     </ul>
 
     <h3>🔹 Semana 3: Mente Fria</h3>
-    <ul>
-      <li>Jogue sem usar o chat</li>
-      <li>Confie só no mapa e nos pings</li>
-      <li>Faça shotcalls de barão/dragão</li>
+    <ul class="checklist">
+      <li><input type="checkbox">Jogue sem usar o chat</li>
+      <li><input type="checkbox">Confie só no mapa e nos pings</li>
+      <li><input type="checkbox">Faça shotcalls de barão/dragão</li>
     </ul>
 
     <h2>📈 Regras de Ouro</h2>
@@ -117,14 +138,14 @@
     </table>
 
     <h2>🚀 Rotina Diária</h2>
-    <ul>
-      <li><strong>10min:</strong> Rever replay e identificar 1 erro</li>
-      <li><strong>30min:</strong> Jogar 2 partidas ranqueadas</li>
-      <li><strong>5min:</strong> Ajustar runas e builds (use u.gg)</li>
-      <li><strong>5min:</strong> Pausa mental</li>
+    <ul class="checklist">
+      <li><input type="checkbox"><strong>10min:</strong> Rever replay e identificar 1 erro</li>
+      <li><input type="checkbox"><strong>30min:</strong> Jogar 2 partidas ranqueadas</li>
+      <li><input type="checkbox"><strong>5min:</strong> Ajustar runas e builds (use <a href="https://u.gg" target="_blank">u.gg</a>)</li>
+      <li><input type="checkbox"><strong>5min:</strong> Pausa mental</li>
     </ul>
 
-    <p style="margin-top:30px; font-style: italic; color:#888;">Feito com GG para jogadores que querem subir de elo sem desculpas. GL HF!</p>
+    <p class="footer">Feito com GG para jogadores que querem subir de elo sem desculpas. GL HF!</p>
   </div>
 </body>
 </html>
